@@ -74,9 +74,11 @@ export class MyElement extends LitElement {
             <h1 id="character-name"></h1>
             <img id="character-img">
                 <div id="character-list ">
+                  <div class="flex-container">
                    ${this.characters.length < 1 ? '' : this.characters.map(({id,age,birthdate,gender,name,occupation,portrait_path,phrases,status}) => html`
                     <character-card-element id=${id} age=${age} birthdate=${birthdate} gender=${gender} name=${name} occupation=${occupation} portrait_path="https://cdn.thesimpsonsapi.com/200${portrait_path}" phrases=${phrases} status=${status } ></character-card-element>
                   `)}
+              </div>
             </div>
         </div>
         `
@@ -169,7 +171,36 @@ export class MyElement extends LitElement {
            font-size: 30px;
            text-align:center;
          }
-  
+   .flex-container {
+            display: flex;
+            background-color: DodgerBlue;
+          }
+
+          .flex-container > div {
+           background-color: #f1f1f1;
+           margin: 10px;
+           padding: 20px;
+           font-size: 30px;
+          }
+           .flex-container {
+              display: flex;
+              flex-wrap: wrap;
+            }
+
+            .flex-item-left {
+              flex: 50%;
+            }
+
+            .flex-item-right {
+              flex: 50%;
+            }
+
+            /* Responsive layout - makes a one column layout instead of a two-column layout */
+            @media (max-width: 800px) {
+              .flex-item-right, .flex-item-left {
+                flex: 100%;
+              }
+            }
          `
     }
 }
