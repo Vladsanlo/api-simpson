@@ -5,11 +5,14 @@
   "name": "api-simpsons",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "@web/dev-server": "^0.4.6"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "web-dev-server"
   },
   "author": "vladypuggu@gmail.com",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "type": "module"
 }
